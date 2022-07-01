@@ -1,0 +1,33 @@
+version: '3.4'
+
+services:
+
+  # catalog db container with image 
+  catalogdb:
+    image: mongo:4.2
+
+ # basket redis container with image
+  basketdb:
+    image: redis:alpine # alpine tag with redis give the redis image that requires less space
+
+
+
+# APIs
+
+  # catalog api container with image  
+  catalog.api:
+    image: ${DOCKER_REGISTRY-}catalogapi
+    build:
+      context: .
+      dockerfile: Services/Catalog/Catalog.API/Dockerfile
+
+    
+  # basket api container with image
+  basket.api:
+    image: ${DOCKER_REGISTRY-}basketapi
+    build:
+      context: .
+      dockerfile: Services/Basket/Basket.API/Dockerfile
+
+volumes:
+  mongo_data:
