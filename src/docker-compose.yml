@@ -6,11 +6,20 @@ services:
   catalogdb:
     image: mongo:4.2
 
- # basket redis container with image
+ # basketdb container with image
   basketdb:
     image: redis:alpine # alpine tag with redis give the redis image that requires less space
 
+ # discountdb container with image
+  discountdb:
+    image: postgres
 
+ # pgadmin container with image for postgres db management tool
+  pgadmin:
+    image: dpage/pgadmin4
+
+  portainer:
+    image: portainer/portainer-ce
 
 # APIs
 
@@ -29,5 +38,15 @@ services:
       context: .
       dockerfile: Services/Basket/Basket.API/Dockerfile
 
+  # discount api container with image
+  discount.api:
+    image: ${DOCKER_REGISTRY-}discountapi
+    build:
+      context: .
+      dockerfile: Services/Discount.API/Discount.API/Dockerfile
+
 volumes:
   mongo_data:
+  portainer_data:
+  postgres_data:
+  pgadmin_data:
