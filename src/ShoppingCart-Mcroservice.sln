@@ -39,7 +39,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ordering.Infrastructure", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventBus.Messages", "BuildingBlocks\EventBus.Messages\EventBus.Messages.csproj", "{B199660B-C2FB-44A0-83D8-87158DA3F75D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OcelotApiGw", "ApiGateways\OcelotApiGw\OcelotApiGw.csproj", "{80AAE664-E4EE-45AE-8D61-B70B78F788E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OcelotApiGw", "ApiGateways\OcelotApiGw\OcelotApiGw.csproj", "{80AAE664-E4EE-45AE-8D61-B70B78F788E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopping.Aggregator", "ApiGateways\Shopping.Aggregator\Shopping.Aggregator.csproj", "{89FAA1BE-9EED-4363-9081-6C2D47D2EF39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,6 +93,10 @@ Global
 		{80AAE664-E4EE-45AE-8D61-B70B78F788E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80AAE664-E4EE-45AE-8D61-B70B78F788E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80AAE664-E4EE-45AE-8D61-B70B78F788E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89FAA1BE-9EED-4363-9081-6C2D47D2EF39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89FAA1BE-9EED-4363-9081-6C2D47D2EF39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89FAA1BE-9EED-4363-9081-6C2D47D2EF39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89FAA1BE-9EED-4363-9081-6C2D47D2EF39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -110,6 +116,7 @@ Global
 		{3858EBE5-DB19-4803-B013-AED1C5AFD35B} = {C4B06D18-2B58-48C8-8652-717F0A1E011F}
 		{B199660B-C2FB-44A0-83D8-87158DA3F75D} = {41949AF8-F423-4309-ADBD-0BE25262D1FE}
 		{80AAE664-E4EE-45AE-8D61-B70B78F788E4} = {70BC8BAE-0A9F-466C-BF94-5CD4DECBB5FA}
+		{89FAA1BE-9EED-4363-9081-6C2D47D2EF39} = {70BC8BAE-0A9F-466C-BF94-5CD4DECBB5FA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7BB90D95-E1B7-4B19-B52A-D2AB582D6B3E}
