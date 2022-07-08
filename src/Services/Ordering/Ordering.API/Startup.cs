@@ -44,6 +44,9 @@ namespace Ordering.API
                     });
                 });
             });
+            services.AddScoped<BasketCheckoutConsumer>();
+            // services.AddMassTransitHostedService(); // Note that for MassTransit V8, or later, this package is no longer required and should not be referenced.
+            services.AddAutoMapper(typeof(Startup));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

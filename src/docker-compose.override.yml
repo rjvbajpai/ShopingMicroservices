@@ -92,8 +92,10 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - "CacheSettings:ConnectionString=basketdb:6379"
       - "GrpcSettings:DiscountUrl=http://discount.grpc"
+      - "EventBusSettings:HostAddress=amqp://guest:guest@rabitmq:5672"
     depends_on:
       - basketdb
+      - rabitmq
     ports:
       - "8001:80"
 
@@ -127,8 +129,24 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - "ConnectionStrings:OrderingConnectionString =data source=orderdb;initial catalog=OrderDb;user id=usrSustain;password=password;"
+      - "EventBusSettings:HostAddress=amqp://guest:guest@rabitmq:5672"
     depends_on:
       - orderdb
+      - rabitmq
     ports:
       - "8004:80"
+
+# discount api
+
+  ocelotapigw:
+    container_name: ocelotapigw
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - catalog.Api
+      - basket.Api
+      - discount.Api
+      - ordering.Api
+    ports:
+      - "8010:80"
 
